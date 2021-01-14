@@ -30,6 +30,7 @@ RUN add-apt-repository -y ppa:git-core/ppa && \
 RUN npm install npm -g && \
     npm install n -g && \
     n stable && \
+    PATH="$PATH" && \
     npm install hexo-cli -g
 
 # set user
@@ -40,7 +41,9 @@ USER zhengqijun:zhengqijun
 WORKDIR /home/zhengqijun
 
 # npm
-RUN hexo init . && \
+RUN mkdir -p Workspace/Blog && \
+    cd Workspace/Blog && \
+    hexo init . && \
     npm install && \
     npm install hexo-generator-sitemap --save && \
     npm install hexo-generator-feed --save && \
