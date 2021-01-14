@@ -13,7 +13,6 @@ RUN apt-get update && \
     curl \
     wget \
     nodejs \
-    nodejs-legacy \
     npm
 
 # install & config git
