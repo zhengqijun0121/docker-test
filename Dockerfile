@@ -26,6 +26,9 @@ RUN add-apt-repository -y ppa:git-core/ppa && \
     git config --global user.email "zhengqijun0121@qq.com" && \
     git config --global user.name "zhengqijun"
 
+# hexo-cli
+RUN npm install hexo-cli -g
+
 # set user
 ENV HOME /home/zhengqijun
 RUN groupadd -g 10000 zhengqijun
@@ -34,8 +37,7 @@ USER zhengqijun:zhengqijun
 WORKDIR /home/zhengqijun
 
 # npm
-RUN npm install hexo-cli -g && \
-    hexo init . && \
+RUN hexo init . && \
     npm install && \
     npm install hexo-generator-sitemap --save && \
     npm install hexo-generator-feed --save && \
