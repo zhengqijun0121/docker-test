@@ -27,7 +27,8 @@ RUN add-apt-repository -y ppa:git-core/ppa && \
     git config --global user.name "zhengqijun"
 
 # hexo-cli
-RUN npm install hexo-cli -g
+RUN npm install npm -g && \
+    npm install hexo-cli -g
 
 # set user
 ENV HOME /home/zhengqijun
