@@ -10,7 +10,6 @@ ENV SHELL=/bin/bash
 RUN apt-get update && \
     apt-get install -y --no-install-recommends --allow-downgrades --fix-missing \
     software-properties-common \
-    python-software-properties \
     git-core \
     curl \
     wget \
