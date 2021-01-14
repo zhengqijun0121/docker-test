@@ -28,6 +28,8 @@ RUN add-apt-repository -y ppa:git-core/ppa && \
 
 # hexo-cli
 RUN npm install npm -g && \
+    npm install n -g && \
+    n stable && \
     npm install hexo-cli -g
 
 # set user
